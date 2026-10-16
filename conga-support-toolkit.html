@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Conga Support Toolkit</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 18px; line-height: 1.6; color: #222; }
+  h1 { color: #7c3aed; }
+  h2 { color: #6d28d9; margin-top: 28px; }
+  a { color: #7c3aed; }
+  .muted { color: #666; font-size: 0.9em; }
+  code { background: #f4f4f5; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  .table { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95em; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f5f3ff; }
+</style>
+</head>
+<body>
+<h1>Conga Support Toolkit privacy policy</h1>
+<p class="muted">Effective October 16, 2026</p>
+
+<p>Conga Support Toolkit is a Chrome extension for Conga's support team. It takes a support engineer from a Salesforce Org ID to that org's Subscriber Support login page in Conga's License Management Org (LMO). This policy explains what the extension reads, where that data goes and what it keeps.</p>
+
+<h2>In short</h2>
+<ul>
+  <li>The extension sends data only to the Salesforce org set as the LMO in its options (by default <code>https://apttus2.my.salesforce.com</code>), using the session you already have there.</li>
+  <li>It has no analytics, tracking, advertising or remote code.</li>
+  <li>It doesn't sell or share data with anyone.</li>
+</ul>
+
+<h2>What the extension reads</h2>
+<div class="table">
+<table>
+  <thead>
+    <tr><th>Data</th><th>When</th><th>Why</th><th>Where it goes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>The Org ID you paste or type</td><td>When you use the popup</td><td>To check the org and open its login page</td><td>To the LMO, in the license lookup</td></tr>
+    <tr><td>Clipboard text</td><td>When the popup opens (auto-paste, which you can turn off) or when you click a paste button</td><td>To fill in a copied Org ID</td><td>Nowhere. Text that isn't an Org ID is discarded at once</td></tr>
+    <tr><td>Your LMO session cookie (<code>sid</code>)</td><td>During the checks</td><td>To call the LMO's Salesforce REST API as you</td><td>Back to the same LMO only, as the API's bearer token</td></tr>
+    <tr><td>License records for the org (account name, package, status, edition, sandbox or production)</td><td>During the checks</td><td>To show whether the org is a subscriber</td><td>Shown in the popup only</td></tr>
+    <tr><td>Whether your LMO user has the "Log in to Subscriber Organization" permission</td><td>During the checks</td><td>To show whether you may log in</td><td>Shown in the popup only</td></tr>
+    <tr><td>Page loads in the tabs the extension opens on Salesforce sites</td><td>While those tabs load</td><td>To know when sign-in has finished and when to move the login tab to the Subscriber Support console</td><td>Nowhere. Other tabs are ignored and nothing is recorded</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>What the extension keeps</h2>
+<ul>
+  <li><strong>Settings</strong> (LMO URL, single sign-on launcher URL, auto-paste on or off), in Chrome's sync storage. They follow your Chrome profile if Chrome Sync is on.</li>
+  <li><strong>Short-lived working state</strong> in Chrome's session storage: the background sign-in tab, the Org ID being checked while sign-in runs, the last Org ID seen on the clipboard, the tabs being taken to the login page, and the last error. Session storage lives in memory and is cleared when Chrome closes; work in progress expires after 15 minutes.</li>
+  <li><strong>The API name of the LMO's login-permission field</strong>, in Chrome's local storage, refreshed weekly. It contains no personal data.</li>
+</ul>
+<p>The extension never stores your session cookie, license details or clipboard text other than an Org ID.</p>
+
+<h2>Signing in</h2>
+<p>If you aren't signed in to the LMO, the extension opens the single sign-on link set in its options (by default, Conga's Microsoft My Apps link for the LMO) in a background tab. That is the normal Microsoft and Salesforce sign-in. The extension never sees your password.</p>
+
+<h2>Sharing</h2>
+<p>Data from the extension is not sold, not transferred to third parties, not used for advertising or anything unrelated to the extension's purpose, and not used to determine creditworthiness or for lending.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li>Turn off auto-paste in the options to stop the popup reading the clipboard when it opens.</li>
+  <li><strong>Restore defaults</strong> in the options resets the settings.</li>
+  <li>Removing the extension deletes everything it stored.</li>
+</ul>
+
+<h2>Changes</h2>
+<p>If the extension's data handling changes, this policy and its effective date will be updated.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: Srikanth Pullela, <a href="mailto:spullela@conga.com">spullela@conga.com</a>.</p>
+
+</body>
+</html>
