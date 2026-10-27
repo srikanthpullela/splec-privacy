@@ -21,12 +21,12 @@
 <h1>Conga Support Toolkit privacy policy</h1>
 <p class="muted">Effective October 27, 2026</p>
 
-<p>Conga Support Toolkit is a Chrome extension for Conga's support team. It takes a support engineer from a Salesforce Org ID to that org's Subscriber Support login page in Conga's License Management Org (LMO). On websites the engineer chooses, it also shows next to each Org ID on the page whether the org is valid. This policy explains what the extension reads, where that data goes and what it keeps.</p>
+<p>Conga Support Toolkit is a Chrome extension for Conga's support team. It takes a support engineer from a Salesforce Org ID to that org's Subscriber Support login page in Conga's License Management Org (LMO). In Conga's Jira and on other websites the engineer chooses, it also shows next to each Org ID on the page whether the org is valid. This policy explains what the extension reads, where that data goes and what it keeps.</p>
 
 <h2>In short</h2>
 <ul>
   <li>The extension sends data only to the Salesforce org set as the LMO in its options (by default <code>https://apttus2.my.salesforce.com</code>), using the session you already have there.</li>
-  <li>It reads web pages only on sites where you switch on Org ID links, and only to find Org IDs. The page text stays in your browser; only the Org IDs go to the LMO.</li>
+  <li>It reads web pages only where Org ID links are on: in Conga's Jira (<code>conga.atlassian.net</code>), where they're on unless you switch them off, and on sites where you switch them on. It reads them only to find Org IDs. The page text stays in your browser; only the Org IDs go to the LMO.</li>
   <li>It has no analytics, tracking, advertising or remote code.</li>
   <li>It doesn't sell or share data with anyone.</li>
 </ul>
@@ -41,7 +41,7 @@
     <tr><td>The Org ID you paste or type</td><td>When you use the popup</td><td>To check the org and open its login page</td><td>To the LMO, in the license lookup</td></tr>
     <tr><td>Clipboard text</td><td>When the popup opens (auto-paste, which you can turn off) or when you click a paste button</td><td>To fill in a copied Org ID</td><td>Nowhere. Text that isn't an Org ID is discarded at once</td></tr>
     <tr><td>Which site the current tab is on</td><td>When you open the popup</td><td>To show the Org ID links switch for that site</td><td>Nowhere. It's kept only if you switch Org ID links on for the site</td></tr>
-    <tr><td>The text of web pages on sites where you've switched on Org ID links</td><td>While such a page is open, and as it changes</td><td>To find the Org IDs on it</td><td>Nowhere. It stays in your browser</td></tr>
+    <tr><td>The text of web pages where Org ID links are on (Conga's Jira, and sites where you've switched them on)</td><td>While such a page is open, and as it changes</td><td>To find the Org IDs on it</td><td>Nowhere. It stays in your browser</td></tr>
     <tr><td>Org IDs found on those pages: 15 or 18 characters starting with <code>00D</code>, such as 00D000000000001</td><td>When such a page shows them</td><td>To check each org and show the result next to it, and to open its login page when you click it</td><td>To the LMO, in the license lookup</td></tr>
     <tr><td>Your LMO session cookie (<code>sid</code>)</td><td>During the checks</td><td>To call the LMO's Salesforce REST API as you</td><td>Back to the same LMO only, as the API's bearer token</td></tr>
     <tr><td>License records for the org (account name, package, status, expiration date, edition, sandbox or production)</td><td>During the checks</td><td>To show whether the org is a subscriber</td><td>Shown only in the popup, or in the extension's card next to the Org ID on the page, which the website's own scripts can't read</td></tr>
@@ -56,7 +56,7 @@
   <li><strong>Settings</strong> (LMO URL, single sign-on launcher URL, auto-paste on or off), in Chrome's sync storage. They follow your Chrome profile if Chrome Sync is on.</li>
   <li><strong>Short-lived working state</strong> in Chrome's session storage: the background sign-in tab, the Org ID being checked while sign-in runs, the last Org ID seen on the clipboard, the tabs being taken to the login page, and the last error. Session storage lives in memory and is cleared when Chrome closes; work in progress expires after 15 minutes.</li>
   <li><strong>The API name of the LMO's login-permission field</strong>, in Chrome's local storage, refreshed weekly. It contains no personal data.</li>
-  <li><strong>The sites where you've switched on Org ID links</strong> (host names, such as <code>yourcompany.atlassian.net</code>), in Chrome's local storage, until you switch them off.</li>
+  <li><strong>The sites where Org ID links are on</strong> (host names, such as <code>conga.atlassian.net</code>), in Chrome's local storage, until you switch them off. It also notes there that Conga's Jira was switched on by default, so it stays off once you switch it off.</li>
   <li><strong>Recent check results</strong> (session, license and permission checks) for Org IDs on those sites, in the extension's memory only, for up to 5 minutes, so that reloading a page doesn't look the same orgs up again.</li>
 </ul>
 <p>The extension never saves your session cookie, license details, page text or clipboard text other than an Org ID.</p>
@@ -70,7 +70,7 @@
 <h2>Your choices</h2>
 <ul>
   <li>Turn off auto-paste in the options to stop the popup reading the clipboard when it opens.</li>
-  <li>Switch Org ID links off for a site in the popup, or remove the site under <strong>Org ID links</strong> in the options. The extension then stops reading that site and gives back its access to it. Taking the access away in Chrome's own settings for the extension does the same.</li>
+  <li>Switch Org ID links off for a site in the popup, or remove the site under <strong>Org ID links</strong> in the options. The extension then stops reading that site and gives back its access to it, apart from Conga's Jira and Salesforce sites, which it keeps access to but no longer reads. Taking the access away in Chrome's own settings for the extension does the same.</li>
   <li><strong>Restore defaults</strong> in the options resets the settings.</li>
   <li>Removing the extension deletes everything it stored.</li>
 </ul>
